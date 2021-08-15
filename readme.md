@@ -169,10 +169,8 @@ The inline code `{{ expression }}` is rendered to its return value
 
 ```html
 <div class="page" id="main">
-    <view>
-		<div>C = {{ app.c = app.a + app.b }}<div>
-		<div>{{ app.c }}</div>
-    </view>
+	<div>C = {{ app.c = app.a + app.b }}<div>
+	<div>{{ app.c }}</div>
 </div>
 <script>
     let app = { a: 1, b: 2, c: 0 }
@@ -192,10 +190,10 @@ Set expression is also rendered to its evaluated value
 
 ```html
 <div class="page" id="main">
-    <view>
-		Items in cart 
-		<span style="font-weight: {{ app.cart.length > 0 ? 'normal' : 'bold' }} ">{{ app.cart.length }}</span>
-    </view>
+
+	Items in cart 
+	<span style="font-weight: {{ app.cart.length > 0 ? 'normal' : 'bold' }} ">{{ app.cart.length }}</span>
+
 </div>
 <script>
     let app = { cart: [] }
@@ -213,9 +211,9 @@ Set expression is also rendered to its evaluated value
 
 ```html
 <div class="page" id="main">
-    <view>
-		Your cart total is {{ strCurrency(app.cartTotal) }}
-    </view>
+
+	Your cart total is {{ strCurrency(app.cartTotal) }}
+
 </div>
 <script>
     let app = { cartTotal: 2.5 }
@@ -231,7 +229,7 @@ Set expression is also rendered to its evaluated value
 
 ## Loops
 
-The most vital and somewhat tedious to do in HTML & Javascript is now much simpler to implement using `<loop>` directive. This directive however **will not** be rendered in `<view>` directive.
+The most vital and somewhat tedious to do in HTML & Javascript is now much simpler to implement using `loop=""` attribute.
 
 
 ```html
