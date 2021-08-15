@@ -124,8 +124,7 @@ Reserved Tags/Classes|Description
 `<titlebar> > div.left`|Title bar left container used for toolbar or navigation buttons
 `<titlebar> > div.title`|Title center container
 `<titlebar> > div.right`|Title bar right container similar to left container
-`<view>`|View container that will render inline expressions
-`<loop>`|Loop container that will render iteration based on `data` attribute
+`[loop=]`|Loop container that will render iteration based on `loop` attribute
 `.page`|Page screen
 `.page-content`|Scrollable content page
 `.page-no-title`|Page without titlebar
@@ -237,12 +236,12 @@ The most vital and somewhat tedious to do in HTML & Javascript is now much simpl
 
 ```html
 <div class="page" id="main">
-    <view>
-		You have {{ count = app.cart.length }} {{ strPlural(count,'item','items') }}
-    </view>
-    <loop data="app.cart as item">
+	
+	You have {{ count = app.cart.length }} {{ strPlural(count,'item','items') }}
+
+    <div loop="app.cart as item">
     	{{ item.name }} - {{ strCurrency(item.price) }}
-    </loop>
+    </div>
 </div>
 <script>
     let app = {
@@ -299,20 +298,20 @@ Awan.js simplifies event handling and data binding to input elements like `<inpu
 ```html
 <div class="page" id="main">
 			
-			<loop data="app.todo as item">
+			<div loop="app.todo as item">
 				<div style="padding: 5px">
 					<input type="checkbox" bind="item.done" value="1" />
 					<input type="text" bind="item.task" />
 				</div>
-			</loop>
+			</div>
 			
 			<h1>My List</h1>
 			
-			<loop data="app.todo as item">
+			<div loop="app.todo as item">
 				<div style="padding: 5px; {{ item.done ? 'text-decoration: line-through' : '' }}">
 					{{ item.task }}
 				</div>
-			</loop>
+			</div>
 			
 			<button onclick="app.todo.push({task: 'new task', done: false})">Add Item</button>
 			
