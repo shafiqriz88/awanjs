@@ -15,7 +15,7 @@ Include Awan.js in your html like below
 <script src="awan.js"></script>
 ```
 
-Being a mobile framework, Awan provides a basic CSS library which is required. This small CSS library provides some best practices for the mobile web realm such as high FPS page transitions and disabling regular web-ish user interactions behavor. 
+Being a mobile framework, Awan provides a basic CSS library which is required. This small CSS library provides some best practices for the mobile web realm such as high FPS page transitions and disabling regular web-ish user interactions behavor. Using utility css frameworks like Tailwind.css is highly recommended for a much rapid application development and ease of managing UI states. 
 
 ```
 <link rel="stylesheet" href="awan.css" />
