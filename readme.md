@@ -29,10 +29,10 @@ This is how you can demonstrate a simple 'Hello World' in Awan.js
 
 ```html
 <div class="page" id="main">
-    <view>
+
        Hello {{ app.name }}!
        <button onclick="app.name = 'Awan'">Click Me</button>
-    </view>
+
 </div>
 <script>
     let app = { name: 'World' }
@@ -141,11 +141,9 @@ Inline expression in Awan.js does not belong to any scope and therefore can acce
 
 ```html
 <div class="page" id="main">
-    <view>
     	<div>A = {{ app.a }}</div>
     	<div>B = {{ app.b }}</div>
 		<div>{{ app.a + app_b }}<div>
-    </view>
 </div>
 <script>
     let app = { a: 1, b: 2 }
@@ -275,12 +273,10 @@ Awan.js simplifies event handling and data binding to input elements like `<inpu
 **Basic data binding**
 ```html
 <div class="page" id="main">
-    <view>
     	<div>
 	    	<input type="text" bind="app.user" />
     	</div>
 		My name is {{ app.user }}
-    </view>
 </div>
 <script>
     let app = { user: 'John Doe' }
