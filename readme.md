@@ -311,14 +311,18 @@ Awan.js simplifies event handling and data binding to input elements like `<inpu
 			
 		</div>
 		<script>
-			let app = { 
+			var data = { 
 				todo: [
 					{task: 'clean desk', done: false},
 					{task: 'buy groceries', done: false},
 					{task: 'repair bicycle', done: false}
 				]
 			}
-			awan.init();
+			awan.init(data, {
+				ready: function(){
+					// init function
+				}
+			});
 		</script>
 ```
 
